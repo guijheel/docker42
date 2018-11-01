@@ -8,7 +8,7 @@ apt-get install -y docker-ce
 systemctl status docker
 #
 00-How-to-docker: #docker-machine start[stop][kill] Char#
-01: docker-machine create --driver virtualbox Char #Création d'un envirronement linux nomée Char
+01: docker-machine create --driver virtualbox Char #
 02: docker-machine ip Char | #docker-machine env Char #DOCKER_HOST="" # Run this command to configure your shell: eval $(docker-machine env Char)
 03: eval $(docker-machine env Char) #DOCKER_TLS_VERIFY=1 DOCKER_HOST="tcp://192.168.99.100:2376" DOCKER_CERT_PATH="$HOME/.docker/machine/machines/Char" DOCKER_MACHINE_NAME="Char" docker ps
 #docker-machine ps
