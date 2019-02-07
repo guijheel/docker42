@@ -48,3 +48,7 @@ apt-get install -y git gcc
 34 :
 
 01__docker suite 
+##
+  docker build -t {container}
+  docker run -it {container}
+##
