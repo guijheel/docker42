@@ -1,0 +1,13 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    26                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: guijheel <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/02/07 15:05:53 by guijheel          #+#    #+#              #
+#    Updated: 2019/02/07 15:05:54 by guijheel         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+docker service create -d --network overmind --name engineering-bay --replicas 2 -e OC_USERNAME=root -e OC_PASSWD=root 42school/engineering-bay

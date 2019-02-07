@@ -1,0 +1,13 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    28                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: guijheel <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/02/07 15:06:01 by guijheel          #+#    #+#              #
+#    Updated: 2019/02/07 15:06:02 by guijheel         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+docker service create --name marines --replicas 2 --network overmind --detach=true -e OC_USERNAME=admin -e OC_USERPASSWD=admin 42school/marine-squad

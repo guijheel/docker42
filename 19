@@ -1,0 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    19                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: guijheel <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/02/07 13:02:46 by guijheel          #+#    #+#              #
+#    Updated: 2019/02/07 14:20:59 by guijheel         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+docker run --name Abathur -v ~/:/root -p 3000:3000 python:2-slim
+docker exec Abathur pip install flask
+echo 'from flask import Flask\napp = Flask(__name__)\n@app.route("/")\ndef hello_world():\n\treturn "<h1> Hello, World</h1>"' > ~/hello.py
+docker exec --env FLASK_APP=/root/hello.py Abathur flask run --port 3000 --host 0.0.0.0 --debugger
