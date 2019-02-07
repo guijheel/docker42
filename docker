@@ -21,7 +21,7 @@ systemctl status docker
 docker run -it --rm debian /bin/bash
 apt-get update
 apt-get install -y git gcc
-10: docker volume create hatchery
+10: docker volume create --name hatchery
 11 : docker volume ls
 12 : docker run -d --name spawning-pool --restart on-failure -v hatchery:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=Kerrigan -e MYSQL_DATABASE=zerglings mysql
 13 : docker exec spawning-pool env
