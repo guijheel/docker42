@@ -57,3 +57,4 @@ docker run -it --name Abathur -v ~/root:/root -p 3000:3000 python:2-slim bash
 # # puis lancer
 # python /root/app.py
 
+-- bonus
