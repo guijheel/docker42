@@ -1,0 +1,15 @@
+19 :
+
+docker run --name Abathur -v ~/gui:/root -p 3000:3000 -dit python:2-slim
+docker exec Abathur pip install flask
+echo 'import Flask from flask\napp = Flask(__name__)\n@app.route("/")\ndef hello():\n\treturn "<h1>hello world!</h1>"' > ~/gui/hello.py && chmod +x ~/gui/hello.py
+docker exec --env FLASK_APP=/root/main.py Abathur flask run --host=0.0.0.0 --port=3000
+
+02 :
+
+FROM ruby
+EXPOSE 3000
+WORKDIR /opt/app
+RUN apt-get update && apt-get install nodejs -y && gem install rails -v 5.0.2 && \
+    rails new server && cd server && bundle && \
+    rake db:migrate && rake db:seed
